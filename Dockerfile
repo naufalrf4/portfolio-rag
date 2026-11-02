@@ -1,9 +1,17 @@
 # syntax=docker/dockerfile:1.7
-FROM oven/bun:1.4.3 AS builder
+FROM oven/bun:1.4.3 AS deps
 WORKDIR /app
 COPY package.json bun.lock tsconfig.json ./
 COPY packages ./packages
 RUN --mount=type=cache,target=/root/.bun/install/cache bun install --frozen-lockfile
+
+FROM deps AS dev
+COPY src ./src
+ENV APP_ENV=development HOST=0.0.0.0 PORT=3005
+EXPOSE 3005
+CMD ["bun", "run", "dev"]
+
+FROM deps AS builder
 COPY src ./src
 RUN bun run build
 
