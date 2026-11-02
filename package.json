@@ -1,0 +1,27 @@
+{
+  "name": "rag-service",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build src/index.ts src/db-bootstrap.ts --target bun --outdir dist --minify",
+    "start": "NODE_ENV=production bun run dist/index.js",
+    "typecheck": "bun x tsc --noEmit",
+    "db:bootstrap": "bun run src/db-bootstrap.ts",
+    "clean": "rm -rf dist node_modules"
+  },
+  "dependencies": {
+    "hono": "4.12.33",
+    "postgres": "3.4.9",
+    "@naufalrf/http": "workspace:*",
+    "@naufalrf/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.14",
+    "typescript": "5.9.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

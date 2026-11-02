@@ -1,0 +1,63 @@
+{
+  "lockfileVersion": 2,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "rag-service",
+      "dependencies": {
+        "@naufalrf/contracts": "workspace:*",
+        "@naufalrf/http": "workspace:*",
+        "hono": "4.12.33",
+        "postgres": "3.4.9",
+      },
+      "devDependencies": {
+        "@types/bun": "1.3.14",
+        "typescript": "5.9.3",
+      },
+    },
+    "packages/contracts": {
+      "name": "@naufalrf/contracts",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@naufalrf/tsconfig": "workspace:*",
+        "typescript": "5.9.3",
+      },
+    },
+    "packages/http": {
+      "name": "@naufalrf/http",
+      "version": "0.0.0",
+      "dependencies": {
+        "@naufalrf/contracts": "workspace:*",
+      },
+      "devDependencies": {
+        "@naufalrf/tsconfig": "workspace:*",
+        "typescript": "5.9.3",
+      },
+    },
+    "packages/tsconfig": {
+      "name": "@naufalrf/tsconfig",
+      "version": "0.0.0",
+    },
+  },
+  "packages": {
+    "@naufalrf/contracts": ["@naufalrf/contracts@workspace:packages/contracts"],
+
+    "@naufalrf/http": ["@naufalrf/http@workspace:packages/http"],
+
+    "@naufalrf/tsconfig": ["@naufalrf/tsconfig@workspace:packages/tsconfig"],
+
+    "@types/bun": ["@types/bun@1.3.14", "", { "dependencies": { "bun-types": "1.3.14" } }, "sha512-h1hFqFVcvAvD9j9K7ZW7vd82aSA+rTdznZa+5bwvCwqSB1jmmfLcbIWhOLx1/+boy/xmjgCs/OMUL8hRJSmnPw=="],
+
+    "@types/node": ["@types/node@26.6.6", "", { "dependencies": { "undici-types": "~8.9.0" } }, "sha512-MzQj+8Kx3XI40OmUAE6Qoh58ZMNstNNMwn2nfd3qWsfe7nDNSqJNzes4njhz6AHwrSHOffSLwXU6yb474Q4aog=="],
+
+    "bun-types": ["bun-types@1.3.14", "", { "dependencies": { "@types/node": "*" } }, "sha512-4N0ig0fEomHt5R0KCFWjovxow98rIoRwKolrYdCcknNwMekCXRnWEUvgu5soYV8QXtVsrUD8B95MBOZGPvr6KQ=="],
+
+    "hono": ["hono@4.12.33", "", {}, "sha512-+SwvkaiJtxsiPjhy9LivY/1m7UsNqCJetM1BrZl9A5DkQhlbHQDU730mMiDPWjnoCYOM8Chf3WrCJw27kNTPFQ=="],
+
+    "postgres": ["postgres@3.4.9", "", {}, "sha512-GD3qdB0x1z9xgFI6cdRD6xu2Sp2WCOEoe3mtnyB5Ee0XrrL5Pe+e4CCnJrRMnL1zYtRDZmQQVbvOttLnKDLnaw=="],
+
+    "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
+
+    "undici-types": ["undici-types@8.9.0", "", {}, "sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg=="],
+  }
+}

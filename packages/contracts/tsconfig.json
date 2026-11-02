@@ -1,0 +1,8 @@
+{
+  "extends": "@naufalrf/tsconfig/base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "."
+  },
+  "include": ["src/**/*.ts", "__tests__/drift-compile-check.ts"]
+}

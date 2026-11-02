@@ -1,0 +1,14 @@
+{
+  "name": "@naufalrf/contracts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "devDependencies": {
+    "@naufalrf/tsconfig": "workspace:*",
+    "typescript": "5.9.3"
+  }
+}
